@@ -1,0 +1,20 @@
+{
+  "name": "studentsprint",
+  "version": "1.0.0",
+  "description": "A STUDENT DAILY TASK COLLECTIONS",
+  "homepage": "https://github.com/Rahullroy/StudentSprint#readme",
+  "bugs": {
+    "url": "https://github.com/Rahullroy/StudentSprint/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rahullroy/StudentSprint.git"
+  },
+  "license": "ISC",
+  "author": "RAHUL ROY",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
