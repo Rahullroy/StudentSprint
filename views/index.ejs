@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentSprinter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>StudentSprinter</h1>
+        <h4>A Page Dedicated To Student Daily Tasks</h4>
+    </header>
+
+
+    <div class="task-container">
+        <form action="/add-task" method="post">
+            <input type="text" name="task" placeholder="Enter Task Here">
+            <button>add task here</button>
+        </form>
+    </div>
+
+    <div class="tasks">
+        <% tasks.forEach((task)=>{ %>
+
+            <div class="task-card">
+
+            <%= task %>
+        <% }) %>
+
+    </div>
+
+
+
+
+
+</body>
+</html>
