@@ -16,19 +16,50 @@
     <div class="task-container">
         <form action="/add-task" method="post">
             <input type="text" name="task" placeholder="Enter Task Here">
-            <button>add task here</button>
+            
+            <br>
+            <br>
+            
+
+            <label>
+                DUE <input type="date" name="dueDate">
+            </label>
+            <br>
+            <br>
+
+           <button type="submit">add task here</button>
         </form>
     </div>
 
-    <div class="tasks">
-        <% tasks.forEach((task)=>{ %>
+    <% tasks.forEach((task,index)=> { %>
 
-            <div class="task-card">
+        <div class="task-card">
+            <br>
 
-            <%= task %>
-        <% }) %>
 
-    </div>
+            <label>
+                <input type="checkbox" name="Taskcompletion" value="yes">
+            </label>
+
+            <%= task.task %>
+            <br>
+            <% if(task.dueDate){ %>
+                Due: <%= task.dueDate %>
+            <% } %>
+            
+            <br>
+            
+
+            <form action="/delete-task/<%=index%>" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+            <br>
+
+           
+            
+        </div>
+ 
+    <% }) %>
 
 
 
