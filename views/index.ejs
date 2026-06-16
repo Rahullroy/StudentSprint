@@ -36,12 +36,24 @@
         <div class="task-card">
             <br>
 
+            
+
 
             <form action="/complete-task/<%=index%>" method="post">
                 <input type="checkbox" name="Taskcompletion" onchange="this.form.submit()" <%= task.completed ? 'checked' : '' %>>
             </form>
+
+            <% if(task.completed){ %>
+
+                <s><%= task.task %></s>
                 
-           
+            <% } else { %>
+
+                <%= task.task %>
+
+            <% } %>
+                
+            <br>
             <br>
             <% if(task.dueDate){ %>
                 Due: <%= task.dueDate %>
@@ -55,15 +67,7 @@
             </form>
             <br>
 
-            <% if(task.completed){ %>
-
-                <s><%= task.task %></s>
-                
-            <% } else { %>
-
-                <%= task.task %>
-
-            <% } %>
+            
                 
 
 
