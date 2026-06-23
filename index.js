@@ -2,7 +2,7 @@ const fs = require("fs");
 const express = require("express");
 const path = require("path");
 const app = express();
-const PORT = 5446;
+const PORT = 5448;
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -27,6 +27,11 @@ app.get('/',(req,res)=>{
 
     const pendingTasks = tasks.filter(task => !task.completed).length;
 
+    let progressPercentage = (completedTasks/totalTasks)*100;
+    if(totalTasks == 0){
+        progressPercentage = 0;
+    }
+
     const search = req.query.search;
 
     let filteredTasks;
@@ -44,7 +49,8 @@ app.get('/',(req,res)=>{
     tasks: filteredTasks,
     totalTasks,
     completedTasks,
-    pendingTasks
+    pendingTasks,
+    progressPercentage,
 });
 });
 
